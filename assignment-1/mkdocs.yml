@@ -1,0 +1,14 @@
+site_name: Assignment 1 - Baseline ML
+
+# Set docs_dir to '.' which means "this directory" (assignment-1)
+docs_dir: reports
+
+theme:
+  name: readthedocs
+
+nav:
+  # The README is now in the docs_dir, so no special path is needed.
+  - Home: README.md 
+  
+  # The report is now in a subfolder of the docs_dir, so the folder name must be included.
+  - Assignment 1 Report: assignment_1_report.md

@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "apt_group": "APT41",
+    "alias": [
+      "Double Dragon",
+      "Winnti",
+      "BARIUM",
+      "Wicked Panda",
+      "Brass Typhoon",
+      "Bronze Atlas",
+      "Blackfly"
+    ],
+    "mitre_id": "G0096",
+    "country": "China",
+    "active_since": "2012",
+    "last_updated": "2025-12-01",
+    "total_reports": 15
+  },
+  "reports": [
+    {
+      "id": 1,
+      "source": "Mandiant/FireEye",
+      "title": "APT41: A Dual Espionage and Cyber Crime Operation",
+      "date": "2019-08-07",
+      "url": "https://www.mandiant.com/resources/reports/apt41-double-dragon-dual-espionage-and-cyber-crime-operation",
+      "key_findings": [
+        "Chinese state-sponsored espionage group conducting financially motivated operations",
+        "Targets healthcare, high-tech, telecommunications sectors",
+        "Uses supply chain attacks and sophisticated malware",
+        "Video game industry targeting for financial gain",
+        "Steals source code and digital certificates"
+      ],
+      "iocs": {
+        "malware": [
+          "Winnti",
+          "HIGHNOON",
+          "POISONPLUG",
+          "PHOTO",
+          "HOMEUNIX"
+        ],
+        "techniques": [
+          "Supply chain compromise",
+          "Spear-phishing",
+          "Code signing certificate theft"
+        ]
+      },
+      "severity": "Critical"
+    },
+    {
+      "id": 2,
+      "source": "Google Threat Intelligence",
+      "title": "APT41 TOUGHPROGRESS Malware Using Google Calendar for C2",
+      "date": "2025-05-28",
+      "url": "https://cloud.google.com/blog/topics/threat-intelligence/apt41-innovative-tactics",
+      "key_findings": [
+        "Uses Google Calendar events for covert C2 communication",
+        "Three-stage malware: PLUSDROP, PLUSINJECT, TOUGHPROGRESS",
+        "Memory-only payloads to evade detection",
+        "Targets government organizations via spear-phishing",
+        "Encryption and process hollowing techniques"
+      ],
+      "iocs": {
+        "malware": [
+          "PLUSDROP",
+          "PLUSINJECT",
+          "TOUGHPROGRESS"
+        ],
+        "c2_method": "Google Calendar events",
+        "encryption": "XOR with hardcoded keys"
+      },
+      "mitre_techniques": [
+        "T1071.001",
+        "T1055",
+        "T1027"
+      ],
+      "severity": "High"
+    },
+    {
+      "id": 3,
+      "source": "Cisco Talos",
+      "title": "APT41 Compromised Taiwanese Government with ShadowPad and Cobalt Strike",
+      "date": "2024-07-30",
+      "url": "https://blog.talosintelligence.com/chinese-hacking-group-apt41-compromised-taiwanese-government-affiliated-research-institute-with-shadowpad-and-cobaltstrike-2/",
+      "key_findings": [
+        "Targeted Taiwanese government-affiliated research institute",
+        "Used ShadowPad malware with custom loaders",
+        "Deployed Cobalt Strike with GoLang anti-AV loader",
+        "Exploited CVE-2018-0824 vulnerability",
+        "Simplified Chinese strings in malware code"
+      ],
+      "iocs": {
+        "malware": [
+          "ShadowPad",
+          "Cobalt Strike"
+        ],
+        "c2_servers": [
+          "103.56.114.69"
+        ],
+        "vulnerabilities": [
+          "CVE-2018-0824"
+        ],
+        "loader": "CS-Avoid-Killing (GoLang-based)"
+      },
+      "mitre_techniques": [
+        "T1190",
+        "T1055",
+        "T1562.001"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "id": 4,
+      "source": "BlackBerry",
+      "title": "Drawing a Dragon: Connecting the Dots to Find APT41",
+      "date": "2021-10-05",
+      "url": "https://blogs.blackberry.com/en/2021/10/drawing-a-dragon-connecting-the-dots-to-find-apt41",
+      "key_findings": [
+        "COVID-19 themed phishing lures",
+        "Cobalt Strike Beacon with bespoke malleable C2 profile",
+        "Targeting Indian nationals and organizations",
+        "Infrastructure correlation across multiple campaigns",
+        "Digital breadcrumbs linking multiple attack clusters"
+      ],
+      "iocs": {
+        "attack_vector": "Phishing emails with malicious PDF attachments",
+        "malware": [
+          "Cobalt Strike Beacon"
+        ],
+        "c2_profile": "Custom malleable profile"
+      },
+      "mitre_techniques": [
+        "T1566.001",
+        "T1071.001",
+        "T1059.003"
+      ],
+      "severity": "High"
+    },
+    {
+      "id": 5,
+      "source": "Group-IB",
+      "title": "4 Malicious Campaigns and New Wave of APT41 Attacks",
+      "date": "2021-09-09",
+      "url": "https://www.group-ib.com/blog/apt41-world-tour-2021/",
+      "key_findings": [
+        "Compromised 13+ organizations worldwide in 2021",
+        "Working hours: Monday-Friday, 10 AM - 7 PM (UTC+8)",
+        "Uses SQL injection for initial access",
+        "Four named campaigns: ColunmTK, DelayLinkTK, Mute-Pond, Gentle-Voice",
+        "Reconnaissance tools: Acunetix, Nmap, Sqlmap, OneForAll"
+      ],
+      "iocs": {
+        "reconnaissance_tools": [
+          "Acunetix",
+          "Nmap",
+          "Sqlmap",
+          "OneForAll",
+          "subdomain3",
+          "subDomainsBrute",
+          "Sublist3r"
+        ],
+        "attack_vector": "SQL injection",
+        "malware": [
+          "Custom Cobalt Strike Beacon"
+        ],
+        "target_industries": [
+          "Government",
+          "Healthcare",
+          "Finance",
+          "Travel",
+          "Media"
+        ]
+      },
+      "mitre_techniques": [
+        "T1190",
+        "T1059",
+        "T1082",
+        "T1018"
+      ],
+      "severity": "High"
+    },
+    {
+      "id": 6,
+      "source": "Darktrace",
+      "title": "How AI Caught APT41 Exploiting Zoho ManageEngine Zero-Day",
+      "date": "2020-04-01",
+      "url": "https://www.darktrace.com/blog/catching-apt41-exploiting-a-zero-day-vulnerability",
+      "key_findings": [
+        "Exploited Zoho ManageEngine CVE-2020-10189 zero-day",
+        "Automated broad-brush campaign for initial access",
+        "Targeted legal sector companies",
+        "Activity aligned with Chinese office hours",
+        "Detected before public IOCs available"
+      ],
+      "iocs": {
+        "vulnerabilities": [
+          "CVE-2020-10189"
+        ],
+        "target_sector": "Legal",
+        "attack_timing": "March 8-9, 2020 UTC",
+        "c2_traffic": "SSL and HTTP"
+      },
+      "mitre_techniques": [
+        "T1190",
+        "T1071",
+        "T1105"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "id": 7,
+      "source": "Lookout",
+      "title": "WyrmSpy and DragonEgg: Android Spyware Attributed to APT41",
+      "date": "2023-10-23",
+      "url": "https://www.lookout.com/threat-intelligence/article/wyrmspy-dragonegg-surveillanceware-apt41",
+      "key_findings": [
+        "Advanced Android surveillanceware",
+        "WyrmSpy and DragonEgg malware families",
+        "Trojanizes legitimate apps like Telegram",
+        "Extensive device data exfiltration",
+        "Rare mobile platform exploitation by APT41"
+      ],
+      "iocs": {
+        "malware": [
+          "WyrmSpy",
+          "DragonEgg"
+        ],
+        "platform": "Android",
+        "payload": "smallmload.jar",
+        "disguise": "Trojanized legitimate apps (Telegram)"
+      },
+      "mitre_techniques": [
+        "T1444",
+        "T1410",
+        "T1430"
+      ],
+      "severity": "High"
+    },
+    {
+      "id": 8,
+      "source": "SOCRadar",
+      "title": "Deep Web Profile: APT41/Double Dragon",
+      "date": "2024-11-01",
+      "url": "https://socradar.io/5-facts-you-should-know-about-apt41-double-dragon/",
+      "key_findings": [
+        "Focus on video game industry initially",
+        "Targeted businesses in 14 countries",
+        "US DOJ charged several members in 2020",
+        "Recently implanted MoonBounce in UEFI firmware",
+        "Known for exploiting internet-facing vulnerabilities"
+      ],
+      "iocs": {
+        "malware": [
+          "MoonBounce",
+          "Winnti"
+        ],
+        "attack_vector": "Internet-facing application exploitation",
+        "infrastructure": "VPS and open-source tools (Cobalt Strike)"
+      },
+      "mitre_techniques": [
+        "T1542.001",
+        "T1190",
+        "T1008"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "id": 9,
+      "source": "MITRE ATT&CK",
+      "title": "APT41 (G0096) Threat Group Profile",
+      "date": "2024",
+      "url": "https://attack.mitre.org/groups/G0096/",
+      "key_findings": [
+        "Active since at least 2012",
+        "Targets healthcare, telecom, technology, finance, education, retail, gaming",
+        "Operations in 14 countries",
+        "Wide range of malware and tools",
+        "Overlaps with BARIUM and Winnti Group reporting"
+      ],
+      "mitre_techniques": [
+        "T1566.001 - Spearphishing Attachment",
+        "T1190 - Exploit Public-Facing Application",
+        "T1071 - Application Layer Protocol",
+        "T1059 - Command and Scripting Interpreter",
+        "T1082 - System Information Discovery",
+        "T1070 - Indicator Removal on Host",
+        "T1055 - Process Injection",
+        "T1027 - Obfuscated Files or Information"
+      ],
+      "severity": "Critical"
+    },
+    {
+      "id": 10,
+      "source": "Rewterz",
+      "title": "APT41 aka BlackFly - Active IOCs",
+      "date": "2024-07-12",
+      "url": "https://rewterz.com/threat-advisory/apt41-aka-blackfly-active-iocs",
+      "key_findings": [
+        "Also known as Winnti Group, Bronze Atlas, BlackFly",
+        "Active since at least 2010",
+        "Uses PlugX/Fast, Winnti/Pasteboy, ShadowPad malware",
+        "Targets gaming, semiconductor, telecoms, pharma, media, hospitality",
+        "Intellectual property theft primary motivation"
+      ],
+      "iocs": {
+        "malware": [
+          "PlugX",
+          "Winnti",
+          "ShadowPad",
+          "Pasteboy"
+        ],
+        "motivation": "Intellectual property theft, espionage"
+      },
+      "mitre_techniques": [
+        "T1027",
+        "T1071",
+        "T1055"
+      ],
+      "severity": "High"
+    }
+  ],
+  "common_ttps": {
+    "initial_access": [
+      "Spear-phishing with malicious attachments",
+      "Supply chain compromise",
+      "Exploitation of public-facing applications",
+      "SQL injection attacks",
+      "Zero-day vulnerability exploitation"
+    ],
+    "execution": [
+      "PowerShell scripts",
+      "Windows Command Shell",
+      "Scripting languages",
+      "Malicious DLLs"
+    ],
+    "persistence": [
+      "Registry run keys",
+      "Scheduled tasks",
+      "Services creation",
+      "UEFI firmware implants"
+    ],
+    "defense_evasion": [
+      "Process injection",
+      "Obfuscation",
+      "Code signing with stolen certificates",
+      "Memory-only payloads",
+      "Anti-AV techniques"
+    ],
+    "c2": [
+      "Google Calendar for C2",
+      "Web protocols (HTTP/HTTPS)",
+      "DNS tunneling",
+      "Custom encrypted channels"
+    ]
+  },
+  "target_industries": [
+    "Healthcare",
+    "Technology",
+    "Telecommunications",
+    "Gaming/Video games",
+    "Finance",
+    "Education",
+    "Retail",
+    "Government",
+    "Travel services",
+    "Media",
+    "Legal sector"
+  ]
+}
